@@ -10,6 +10,7 @@ CRA를 이용하지 않고 직접 개발 환경을 구성하기 위해 진행되
 3. dev tool 변경
 4. minify와 uglify (+ 이미지, CSS)
 5. 등 webpack 문서 확인
+6. [리액트 문서 최적화](https://ko.reactjs.org/docs/optimizing-performance.html)
 
 ---
 
@@ -120,3 +121,13 @@ prettier prettier-webpack-plugin 설치
 2. react-hot-loader -S 설치
 3. .babelrc에 `"plugins": ["react-hot-loader/babel"]`를 지정.
 4. index.js에 [코드](https://webpack.js.org/guides/hot-module-replacement/#gotchas)를 <u>주의하여 지정</u>.
+
+<br>
+
+1. Hook 등의 React 16.6+ features를 사용하기 위해, react-dom을 대체하지만 추가적으로 hot reloading을 지원하는 **@hot-loade/react-dom**을 설치. `npm install react-dom@npm:@hot-loader/react-dom` [문서](https://www.npmjs.com/package/react-hot-loader#hot-loaderreact-dom)
+2. 위 명령으로 package.json에 자동 지정됨: `"react-dom": "npm:@hot-loader/react-dom@^16.13.0"`
+3. development mode에서 컴포넌트가 2번 실행된다면, React.StrictMode때문이다.
+
+---
+
+<br><br>

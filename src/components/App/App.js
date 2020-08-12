@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable */
+import React, { useState } from 'react';
 import './App.css';
 import Image from './circle.jpg';
 
@@ -12,10 +13,16 @@ const App = () => {
     );
   })();
 
+  const [count, setCount] = useState(0);
+
   return (
     <>
       <section className="App">
         'I am a section.'
+        <button type="button" onClick={() => setCount(count + 1)}>
+          {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
+          {count}입니다.
+        </button>
         <img src={Image} alt="" />
       </section>
     </>
